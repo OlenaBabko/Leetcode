@@ -15,3 +15,11 @@ def find_customers(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFram
     rename_df = find_customers_who_never_df[['name']].rename(columns={'name': 'Customers'})
     return rename_df
 
+
+# Write your MySQL query statement below
+
+SELECT name as Customers
+FROM customers
+WHERE id NOT IN (
+    SELECT customerId
+    FROM orders);
