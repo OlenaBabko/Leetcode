@@ -15,3 +15,10 @@ def invalid_tweets(tweets: pd.DataFrame) -> pd.DataFrame:
     return invalid_tweets_id_df
 
 
+
+
+# Write your MySQL query statement below
+
+SELECT tweet_id
+FROM Tweets
+WHERE (LENGTH (content) > 15);
