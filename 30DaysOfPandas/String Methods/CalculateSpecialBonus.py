@@ -18,3 +18,11 @@ def calculate_special_bonus(employees: pd.DataFrame) -> pd.DataFrame:
     bonus_df = employees[['employee_id', 'bonus']].sort_values('employee_id')
     return bonus_df
 
+
+
+
+# Write your MySQL query statement belo
+
+SELECT employee_id, IF ((employee_id%2 != 0) AND (name NOT LIKE 'M%'), salary, 0) AS bonus
+FROM Employees
+ORDER BY employee_id ASC;
