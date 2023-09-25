@@ -18,3 +18,9 @@ def valid_emails(users: pd.DataFrame) -> pd.DataFrame:
     valid_emails_df = users[users['mail'].str.match(r"^[A-Za-z][A-Za-z0-9_\-\.]*@leetcode\.com$")]
     return valid_emails_df
 
+
+
+# Write your MySQL query statement below
+SELECT *
+FROM Users
+WHERE mail REGEXP '^[A-Za-z][A-Za-z0-9_.-]*@leetcode\\.com$';
