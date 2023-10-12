@@ -21,3 +21,14 @@ def department_highest_salary(employee: pd.DataFrame, department: pd.DataFrame) 
 
 
 
+
+# Write your MySQL query statement below
+
+SELECT Department.name AS Department, Employee.name AS Employee, Employee.salary AS Salary
+FROM Employee
+LEFT JOIN Department
+ON Employee.departmentId = Department.id
+WHERE (Employee.departmentID, Employee.salary) IN (
+    SELECT departmentID, max(Employee.salary)
+    FROM Employee
+    GROUP BY Employee.departmentID);
