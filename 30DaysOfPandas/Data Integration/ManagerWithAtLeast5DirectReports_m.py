@@ -27,3 +27,14 @@ INNER JOIN Employee AS Employee2
 ON Employee1.id = Employee2.managerId
 GROUP BY Employee1.id
 HAVING COUNT(Employee2.managerId)>= 5;
+
+
+## 2
+SELECT name
+FROM Employee
+WHERE id IN (
+    SELECT managerId
+    FROM Employee
+    GROUP BY managerId
+    HAVING COUNT(managerId) >= 5
+);
