@@ -18,3 +18,12 @@ def find_managers(employee: pd.DataFrame) -> pd.DataFrame:
 
 ### '.loc' is used to filter and select specific rows and columns in a DF
 
+
+
+## 1
+SELECT Employee1.name
+FROM Employee AS Employee1
+INNER JOIN Employee AS Employee2
+ON Employee1.id = Employee2.managerId
+GROUP BY Employee1.id
+HAVING COUNT(Employee2.managerId)>= 5;
