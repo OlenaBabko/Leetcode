@@ -15,3 +15,11 @@ def find_classes(courses: pd.DataFrame) -> pd.DataFrame:
 # df = courses.groupby('class').count().reset_index()
 
 
+# Write your MySQL query statement below
+SELECT class
+FROM Courses
+GROUP BY class
+HAVING COUNT(DISTINCT student) >= 5;
+# WHERE COUNT(class > 4);
+
+
