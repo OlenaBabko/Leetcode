@@ -30,3 +30,16 @@ ORDER BY COUNT(order_number) DESC
 LIMIT 1
 
 
+# # # Subquery
+# WITH subquery AS (
+#     SELECT
+#         customer_number
+#         , COUNT(*) counts
+#     FROM Orders
+#         GROUP BY customer_number)
+#
+# SELECT
+#     customer_number
+# FROM subquery
+#     ORDER BY counts DESC
+# LIMIT 1
