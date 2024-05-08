@@ -17,4 +17,8 @@ def daily_leads_and_partners(daily_sales: pd.DataFrame) -> pd.DataFrame:
 
 
 
-
+SELECT date_id, make_name,
+    COUNT(DISTINCT(lead_id), date_id, make_name) AS unique_leads,
+    COUNT(DISTINCT(partner_id), date_id, make_name) AS unique_partners
+FROM DailySales
+GROUP BY date_id, make_name;
