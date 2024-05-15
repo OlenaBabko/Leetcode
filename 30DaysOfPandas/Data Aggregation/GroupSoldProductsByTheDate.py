@@ -20,3 +20,12 @@ def categorize_products(activities: pd.DataFrame) -> pd.DataFrame:
 
 
 
+
+SELECT sell_date,
+    COUNT(DISTINCT(product), sell_date) AS num_sold,
+    GROUP_CONCAT(DISTINCT product ORDER BY product)  AS products
+FROM Activities
+GROUP BY sell_date
+ORDER BY sell_date;
+# GROUP_CONCAT(DISTINCT product order by product ASC separator ',' ) as products
+### GROUP_CONCAT, in which you can also specify the sorting mechanism for the group concatenation (aggregation).
