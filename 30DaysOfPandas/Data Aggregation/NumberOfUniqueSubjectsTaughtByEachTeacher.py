@@ -13,3 +13,8 @@ def count_unique_subjects(teacher: pd.DataFrame) -> pd.DataFrame:
 ##subjects_df.columns = ['teacher_id', 'cnt']
 
 
+# Write your MySQL query statement b
+SELECT teacher_id,
+COUNT(DISTINCT subject_id) AS cnt
+FROM Teacher
+GROUP BY teacher_id;
