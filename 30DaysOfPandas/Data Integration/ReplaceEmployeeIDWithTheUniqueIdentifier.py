@@ -19,3 +19,10 @@ def replace_employee_id(employees: pd.DataFrame, employee_uni: pd.DataFrame) -> 
     return replaced
 
 
+# Write your MySQL query statement below
+
+SELECT UNI.unique_id, Employees.name
+FROM Employees
+LEFT JOIN EmployeeUNI AS UNI
+ON Employees.id = UNI.id;
+
