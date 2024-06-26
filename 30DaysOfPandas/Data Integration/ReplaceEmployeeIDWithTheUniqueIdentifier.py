@@ -26,3 +26,8 @@ FROM Employees
 LEFT JOIN EmployeeUNI AS UNI
 ON Employees.id = UNI.id;
 
+## 2
+SELECT Emp.id, Emp.name, UNI.unique_id
+FROM Employees AS Emp
+LEFT JOIN EmployeeUNI AS  UNI
+ON Emp.id = UNI.id;
