@@ -41,3 +41,19 @@ def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.D
 
 
 
+###
+SELECT SalesPerson.name
+FROM SalesPerson
+WHERE SalesPerson.name NOT IN (
+    SELECT SalesPerson.name
+    FROM SalesPerson
+    LEFT JOIN Orders
+    ON SalesPerson.sales_id = Orders.sales_id
+    LEFT JOIN Company
+    ON Orders.com_id = Company.com_id
+    WHERE Company.name  = 'Red'
+);
+
+
+#WHERE SalesPerson.name NOT IN Company.name  = 'Red'
+
