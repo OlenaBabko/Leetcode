@@ -31,3 +31,13 @@ def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.D
     sales_person_not_red = sales_person[~sales_person['sales_id'].isin(red)][['name']]
     return sales_person_not_red
 
+### 2
+def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
+    com_id = pd.merge(company, orders, on= 'com_id')
+    red = com_id[com_id['name'] == 'RED']
+    not_red = red.sales_id.unique()
+    sales_person_not_red = sales_person[~sales_person['sales_id'].isin(not_red)][['name']]
+    return sales_person_not_red
+
+
+
