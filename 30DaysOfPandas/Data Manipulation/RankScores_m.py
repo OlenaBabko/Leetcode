@@ -17,3 +17,12 @@ def order_scores(scores: pd.DataFrame) -> pd.DataFrame:
 
 
 
+###
+SELECT score,
+(SELECT count(distinct Score)
+ FROM Scores
+ WHERE Score >= score.Score) RANK
+FROM Scores score
+ORDER BY Score DESC
+
+
