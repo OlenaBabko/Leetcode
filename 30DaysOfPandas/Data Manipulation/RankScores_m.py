@@ -26,3 +26,10 @@ FROM Scores score
 ORDER BY Score DESC
 
 
+### 2
+SELECT score, DENSE_RANK() OVER(ORDER BY score DESC) as "rank"
+FROM Scores
+
+
+### dense_rank() is a window function that assigns a rank to each row within the result set, 
+# ensuring that rows with the same values get the same rank.
